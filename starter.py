@@ -28,7 +28,27 @@ def get_proper_noun_phrases(landmarks_dict:dict[dict], target_landmark:str) -> l
 
     returns a list with all proper nounts
     '''
-    pass
+
+    d = {}
+    
+
+    table = soup.find("table", class_="wikitable sortable")
+    rows = table.find_all("tr")
+
+    for row in rows:
+        elements = row.find_all("td")
+        name = elements[0].text.strip()
+        nested = ["data designated"] = elements[2].text.strip()
+        nested["location"] = elements[3].text.strip()
+        nested["country"] = elements[4].text.strip()
+        nested["description"] = elements[5].text.strip()
+        print(elements)
+
+        d[name] = nested
+    return d
+
+
+
 
 
 def main():
