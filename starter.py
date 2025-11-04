@@ -17,17 +17,6 @@ def get_landmark_data(soup) -> dict[dict]:
 
     returns a nested dictionary
     '''
-    
-
-# TASK 3: GET PROPER NOUNS
-def get_proper_noun_phrases(landmarks_dict:dict[dict], target_landmark:str) -> list[str]:
-    '''
-    extracts all proper noun phrases from the description field of the target landmark 
-
-    proper noun phrase = multiple consecutive capitalized worlds (e.g. 'Great Lakes' or 'Michigan State')
-
-    returns a list with all proper nounts
-    '''
 
     d = {}
     
@@ -46,6 +35,19 @@ def get_proper_noun_phrases(landmarks_dict:dict[dict], target_landmark:str) -> l
 
         d[name] = nested
     return d
+
+    
+
+# TASK 3: GET PROPER NOUNS
+def get_proper_noun_phrases(landmarks_dict:dict[dict], target_landmark:str) -> list[str]:
+    '''
+    extracts all proper noun phrases from the description field of the target landmark 
+
+    proper noun phrase = multiple consecutive capitalized worlds (e.g. 'Great Lakes' or 'Michigan State')
+
+    returns a list with all proper nounts
+    '''
+
 
 
 
